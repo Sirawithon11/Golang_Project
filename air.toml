@@ -1,0 +1,16 @@
+# air.toml
+
+# กำหนด root (ถ้าต้องการ)
+root = "."
+
+# Section build สำหรับตั้งค่าการ build
+[build]
+  bin = "tmp/main"
+  cmd = "go build -o {{.Output}} {{.Input}}"
+  includeExt = ["go"]
+  excludeDir = ["tmp", "client"]
+  
+
+# Section run สำหรับตั้งค่าการรันโปรแกรมหลัง build
+[run]
+  cmd = "./tmp/main"
